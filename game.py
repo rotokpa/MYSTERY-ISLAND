@@ -79,10 +79,15 @@ def can_access_location(player, destination):
 
     return True
 
+import time
+
 def rest_player(player):
     print("You are resting...")
-    for number in range(5, 0 -1):
-        print(number)
-        
 
-    
+    for number in range(5, 0, -1):
+        print(number)
+        time.sleep(1)
+
+    player["energy"] = min(player["energy"] + 1, 5)
+
+    print(f"Recovered energy: {player['energy']}")
